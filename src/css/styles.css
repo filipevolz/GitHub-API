@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background-color:#24292e;
+  font-family: "Kumbh Sans", sans-serif;  
+  text-align: center;    
+  padding-bottom: 100px;
+}
+
+main {
+  display: flex;  
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 0 0;      
+}
+
+.devicon-github-original{
+  font-size: 60px;
+  margin-bottom: 30px;
+  color: #FFFFFF;
+}
+
+.section{
+  padding: 70px 0;
+}
+
+.container {
+  width: 60%; /* se for uma tela menor que 980px vai se adaptar a 70% */
+  max-width: 960px; /* quando chegar em 980px para de aumentar */
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 50px -12px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 30px;
+  padding: 30px;
+  margin: 0 auto;
+}
+
+.container header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 0;
+}
+
+.container header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.container header #input-search {
+  width: 400px;
+  font-size: 17px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid grey;
+}
+
+.container header #btn-search {
+  width: 200px;
+  font-size: 17px;
+  margin: 20px auto 0;
+  padding: 10px;
+  border-radius: 7px;  
+  cursor: pointer;
+  border: 1px solid grey;
+}
+
+.container header #btn-search:hover {
+  background-color: hotpink;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.container .profile-data{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;  
+}
+
+.container .profile-data .info {
+  display: flex;  
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.container .profile-data .info .data{
+  padding: 40px;
+  width: 50%;
+}
+
+.container .profile-data .info a{
+  width: 50%;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+}
+
+.container .profile-data .info a:hover{
+  transform: scale(1.1);
+}
+
+.container .profile-data .info a img {
+  border-radius: 50%;
+  background: linear-gradient(#d39e33, #ed5636, #633bbc) padding-box,
+  linear-gradient(260deg, #d39e33, #ed5636, #633bbc) border-box;
+  padding: 5px;
+}
+
+.container .profile-data .info .data a h1{
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  transition: 0.3s ease-in-out;
+}
+
+.container .profile-data .info .data a h1:hover {
+  transform: scale(1.1);
+}
+
+.container .profile-data .info .data p{
+  font-size: 15px;  
+  font-weight: 400;
+  line-height: 23px;
+}
+
+/* REPOSITORIES */
+
+.container .profile-data .repositories h2{
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.container .profile-data .repositories .list-repositories{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.container .profile-data .repositories .list-repositories .list-itens-repositories{
+  border: 1px solid grey;
+  border-radius: 7px;
+  width: 250px;
+}
+
+.container .profile-data .repositories .list-repositories .list-itens-repositories a{
+  display: block;
+  transition: 0.3s ease-in-out;
+  padding: 10px;
+  height: 100%;
+}
+
+.container .profile-data .repositories .list-repositories .list-itens-repositories a:hover{
+  background-color:hotpink;
+  color: #fff
+}
+
+.container .profile-data .repositories .list-repositories .list-itens-repositories a p {
+  margin-bottom: 10px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.container .profile-data .repositories .list-repositories .list-itens-repositories ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.container .profile-data .repositories .list-repositories .list-itens-repositories ul li{
+  background-color: blueviolet;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.container .profile-data.hide{
+  display: none;
+}
+
+/* EVENTOS */
+.container .profile-data .events {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap:30px;
+  padding: 30px 150px;
+  background-color: #e4e4e4;
+  border-radius: 5px;
+}
+
+.container .profile-data .events h2 {
+  font-weight: 800;
+  color: #24292e;
+}
+
+.container .profile-data .events ul li {
+  margin-bottom: 20px;
+  transition: 0.3s ease-in-out
+}
+
+.container .profile-data .events ul li:hover {
+  transform: scale(1.1);
+}
+
+.container .profile-data .events ul li a p{
+  font-weight: bold;
+  
+}
+
+
+@media (max-width: 1280px) {
+  .container {
+    flex-direction: column;
+    width: 90%;
+    border-radius: 20px;
+  }
+
+  .container header {
+    width: 100%;
+  }
+
+  .container header h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .container header #input-search,
+  .container header #btn-search
+  {
+    width: 100%;
+  }
+}
+
+@media (max-width: 490px) {
+  main {
+    padding: 15% 0;    
+  }
+
+  .container .profile-data .info a img{
+    width: 70%;
+  }
+
+  .container .profile-data .info a,
+  .container .profile-data .info .data
+  {
+    width: 100%;
+  }
+
+  .container .profile-data .events {
+    padding: 40px; 
+  }
+}
