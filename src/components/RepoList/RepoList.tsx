@@ -3,7 +3,7 @@ import styled from "styled-components";
 interface Repo {
   name: string;
   description: string | null;
-  url: string; // URL do repositório no GitHub
+  html_url: string;
 }
 
 interface RepoListProps {
@@ -43,11 +43,13 @@ const ListItem = styled.li`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 1rem;
   height: 150px;
+  transition: transform 0.2s ease-in-out;
+  padding: 1rem;
 
   &:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.01)
   }
 
   @media (max-width: 400px) {
@@ -94,6 +96,8 @@ const RepoDescription = styled.span`
 const RepoLink = styled.a`
   text-decoration: none;
   color: inherit;
+  width: 100%;
+  height: 100%;
 `;
 
 export function RepoList({ repos, search }: RepoListProps) {
@@ -101,13 +105,15 @@ export function RepoList({ repos, search }: RepoListProps) {
     ? repos.filter((repo) => repo.name.toLowerCase().includes(search.toLowerCase()))
     : repos;
 
+    console.log(repos)
+
   return (
     <div>
       {filteredRepos.length > 0 ? (
         <ListContainer>
           {filteredRepos.map((repo) => (
             <ListItem key={repo.name}>
-              <RepoLink href={repo.url} target="_blank" rel="noopener noreferrer">
+              <RepoLink href={repo.html_url} target="_blank" rel="noopener noreferrer">
                 <RepoName>{repo.name}</RepoName>
                 <RepoDescription>{repo.description || "Repositório sem descrição 😑"}</RepoDescription>
               </RepoLink>
