@@ -9,7 +9,7 @@ export function App() {
     <BrowserRouter>
       <Routes>
       <Route
-          path='/userSearch'
+          path='/GitHub-API'
           element={<UserSearch />}
         />
         <Route

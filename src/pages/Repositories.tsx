@@ -16,7 +16,7 @@ export function Repositories() {
 
   return (
     <main>
-      <ButtonReturn onClick={() => navigator("/userSearch")} />
+      <ButtonReturn onClick={() => navigator("/GitHub-API")} />
 
       <InputSearch
         name="search"
