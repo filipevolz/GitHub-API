@@ -93,7 +93,7 @@ const RepoDescription = styled.span`
 
 const RepoLink = styled.a`
   text-decoration: none;
-  color: inherit; /* Garante que o texto dentro do link não mude de cor */
+  color: inherit;
 `;
 
 export function RepoList({ repos, search }: RepoListProps) {
@@ -106,12 +106,12 @@ export function RepoList({ repos, search }: RepoListProps) {
       {filteredRepos.length > 0 ? (
         <ListContainer>
           {filteredRepos.map((repo) => (
-            <RepoLink key={repo.name} href={repo.url} target="_blank" rel="noopener noreferrer">
-              <ListItem>
+            <ListItem key={repo.name}>
+              <RepoLink href={repo.url} target="_blank" rel="noopener noreferrer">
                 <RepoName>{repo.name}</RepoName>
                 <RepoDescription>{repo.description || "Repositório sem descrição 😑"}</RepoDescription>
-              </ListItem>
-            </RepoLink>
+              </RepoLink>
+            </ListItem>
           ))}
         </ListContainer>
       ) : (
