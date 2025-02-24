@@ -95,6 +95,7 @@ export function UserSearch() {
         <InputSearch
           placeholder='Digite o usuário do GitHub'
           {...register("user")}
+          inputMode='none'
         />
         {errors.user && <ErrorMessage>{errors.user.message}</ErrorMessage>}
         <ButtonSearch />
