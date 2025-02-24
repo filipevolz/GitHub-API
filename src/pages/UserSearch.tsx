@@ -93,9 +93,8 @@ export function UserSearch() {
       <Title>Buscar usuário</Title>
       <Form onSubmit={handleSubmit(handleSearchUser)}>
         <InputSearch
-          placeholder='teste'
+          placeholder='Digite o usuário do GitHub'
           {...register("user")}
-          inputMode='none'
         />
         {errors.user && <ErrorMessage>{errors.user.message}</ErrorMessage>}
         <ButtonSearch />
