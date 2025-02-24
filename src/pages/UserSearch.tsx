@@ -5,6 +5,7 @@ import { InputSearch } from '../components/InputSearch/InputSearch';
 import { useNavigate } from 'react-router';
 import { ButtonSearch } from '../components/ButtonSearch/ButtonSearch';
 import styled from 'styled-components';
+import { useState } from 'react';
 
 const searchUserFormSchema = z.object({
   user: z.string().min(3, "O usuário é obrigatório!"),
@@ -51,6 +52,7 @@ const Title = styled.h2`
 `;
 
 export function UserSearch() {
+  const [inputValue, setInputValue] = useState('');
   const navigator = useNavigate();
   const {
     register,
@@ -87,6 +89,8 @@ export function UserSearch() {
     }
   }
 
+  console.log(inputValue)
+
   return (
     <FormContainer>
       <GitHubIcon className="devicon-github-original"></GitHubIcon>
@@ -95,10 +99,17 @@ export function UserSearch() {
         <InputSearch
           placeholder='Testando'
           {...register("user")}
-          inputMode="none"
-          readOnly
+
         />
         {errors.user && <ErrorMessage>{errors.user.message}</ErrorMessage>}
+        <input type="text"
+          inputMode="none"
+          value={inputValue}
+          readOnly
+        />
+        <input type="text"
+          onChange={(e) => setInputValue(e.target.value)}
+        />
         <ButtonSearch />
       </Form>
     </FormContainer>
