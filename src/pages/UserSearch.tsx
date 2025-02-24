@@ -93,7 +93,7 @@ export function UserSearch() {
       <Title>Buscar usuário</Title>
       <Form onSubmit={handleSubmit(handleSearchUser)}>
         <InputSearch
-          placeholder='Digite o usuário do GitHub'
+          placeholder='Testando'
           {...register("user")}
           inputMode="none"
         />
