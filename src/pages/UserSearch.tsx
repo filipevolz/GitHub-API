@@ -96,6 +96,7 @@ export function UserSearch() {
           placeholder='Testando'
           {...register("user")}
           inputMode="none"
+          readOnly
         />
         {errors.user && <ErrorMessage>{errors.user.message}</ErrorMessage>}
         <ButtonSearch />
